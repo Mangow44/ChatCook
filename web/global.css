@@ -1,13 +1,14 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: system-ui;
 }
 
 body {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-color: antiquewhite;
+    background-color: #262626;
 }
 
 .status {
@@ -17,51 +18,31 @@ body {
 }
 
 .status-circle {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 90%;
     margin: 0 10px;
     background-color: black;
 }
 
+.status-title {
+    color: white;
+}
+
 .chat-container {
     display: flex;
     flex-direction: column;
-    background-color: rgb(177, 170, 170);
-    width: 90%;
-    height: 90%;
+    background-color: #d9d9d9;
+    width: 95%;
+    height: 85%;
     margin: auto;
+    border-radius: 10px;
 }
 
 .dialog {
     width: 100%;
     height: 95%;
     overflow: auto;
-}
-
-.chat-input {
-    width: 100%;
-    height: 5%;
-    padding: 1px;
-}
-
-.dialog-box {
-    padding: 10px;
-    margin: 1%;
-    width: 45%;
-    height: auto;
-    background-color: white;
-    border-radius: 5px;
-    white-space: normal;
-}
-
-.right {
-    margin-left: auto;
-}
-
-.left {
-    margin-right: auto;
-    background-color: rgb(217, 201, 233);
 }
 
 .dialog::-webkit-scrollbar {
@@ -71,4 +52,58 @@ body {
 .dialog {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+}
+
+.chat-input {
+    width: 90%;
+    height: 5%;
+    margin: 5px auto;
+    padding: 3px;
+    font-size: clamp(15px, 10rem, 50%);
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #262626;
+    outline: none;
+    color: #262626;
+}
+
+.dialog-box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 1%;
+    width: 45%;
+    height: auto;
+    background-color: white;
+    border-radius: 5px;
+    white-space: normal;
+    box-shadow: 2px 2px 1px 1px;
+}
+
+.dialog-box img {
+    width: auto;
+    height: 30px;
+    border-radius: 90%;
+    padding-right: 5px;
+}
+
+.right {
+    margin-left: auto;
+}
+
+.left {
+    margin-right: auto;
+}
+
+footer {
+    display: flex;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+}
+
+footer p {
+    margin: 2px auto;
+    color: white;
 }

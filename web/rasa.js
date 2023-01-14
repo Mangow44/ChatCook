@@ -17,9 +17,11 @@ window.addEventListener("keypress", (e) => {
 });
 
 function sendMessage(msg) {
-    let userBox = createBox(msg, "right");
+    let userBox = createBox(msg, "right", "user");
     dialog.appendChild(userBox);
-    dialog.scrollTop = dialog.scrollHeight;
+
+    let botBox = createBox("Typing...", "left", "bot");
+    dialog.appendChild(botBox);
 
     fetch("http://localhost:5005/webhooks/rest/webhook", {
         method: "POST",
@@ -27,16 +29,27 @@ function sendMessage(msg) {
     })
         .then((response) => response.json())
         .then((data) => {
-            dialog.appendChild(createBox(data[0].text, "left"));
+            botBox.children[1].innerText = data[0].text;
         })
         .catch((error) => {
-            console.error("Error:", error);
+            botBox.children[1].style.color = "red";
+            botBox.children[1].innerText = "I am afraid, an error occurred :/";
         });
+
+    dialog.scrollTop = dialog.scrollHeight;
 }
 
-function createBox(msg, position) {
+function createBox(msg, position, sender) {
     let box = document.createElement("div");
     box.setAttribute("class", `dialog-box ${position}`);
-    box.innerText = msg;
+    let text = document.createElement("p");
+    text.innerText = msg;
+    if (sender === "bot") {
+        let picture = document.createElement("img");
+        picture.setAttribute("src", "./chatcookpic.png");
+        picture.setAttribute("alt", "chatcook's picture");
+        box.appendChild(picture);
+    }
+    box.appendChild(text);
     return box;
 }
