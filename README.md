@@ -23,6 +23,7 @@ Installer Rasa :
 Liste des commandes shell à utiliser pour faire fonctionner Rasa :
 
 -   https://rasa.com/docs/rasa/command-line-interface
+-   https://rasa.com/docs/rasa/domain/
 
 ## Actions customisées :
 

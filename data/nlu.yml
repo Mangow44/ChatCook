@@ -93,3 +93,9 @@ nlu:
     - intent: quoi
       examples: |
           - quoi ?
+
+    - intent: questioning
+      examples: |
+          - I want to do a {recipe}
+          - I want to cook a {recipe}
+          - Give me the recipe for {recipe}

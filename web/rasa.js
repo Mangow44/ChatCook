@@ -20,8 +20,8 @@ function sendMessage(msg) {
     let userBox = createBox(msg, "right", "user");
     dialog.appendChild(userBox);
 
-    let botBox = createBox("Typing...", "left", "bot");
-    dialog.appendChild(botBox);
+    // let botBox = createBox("Typing...", "left", "bot");
+    // dialog.appendChild(botBox);
 
     fetch("http://localhost:5005/webhooks/rest/webhook", {
         method: "POST",
@@ -29,7 +29,23 @@ function sendMessage(msg) {
     })
         .then((response) => response.json())
         .then((data) => {
-            botBox.children[1].innerText = data[0].text;
+            data.forEach((message) => {
+                if (message["text"]) {
+                    dialog.appendChild(
+                        createBox(message["text"], "left", "bot")
+                    );
+                } else if (message["image"]) {
+                    let botBox = createBox("", "left", "bot");
+                    botBox.removeChild(botBox.children[1]);
+                    let img = document.createElement("img");
+                    img.setAttribute("src", message["image"]);
+                    img.setAttribute("alt", "image from rasa");
+                    img.setAttribute("referrerpolicy", "no-referrer");
+                    img.setAttribute("class", "box-img");
+                    botBox.appendChild(img);
+                    dialog.appendChild(botBox);
+                }
+            });
         })
         .catch((error) => {
             botBox.children[1].style.color = "red";

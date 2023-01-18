@@ -32,3 +32,8 @@ stories:
       steps:
           - intent: quoi
           - action: action_feur
+
+    - story: helping to cook
+      steps:
+          - intent: questioning
+          - action: utter_cooking

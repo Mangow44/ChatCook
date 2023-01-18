@@ -9,6 +9,7 @@ intents:
     - mood_unhappy
     - bot_challenge
     - quoi
+    - questioning
 
 responses:
     utter_greet:
@@ -29,6 +30,9 @@ responses:
 
     utter_iamabot:
         - text: "I am a bot, powered by Rasa."
+
+    utter_cooking:
+        - text: "Do you want to cook a {recipe} ?"
 
 actions:
     - action_feur
