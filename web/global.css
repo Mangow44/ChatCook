@@ -90,7 +90,7 @@ body {
 
 .dialog-box {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     padding: 10px;
     margin: 1%;
     width: 45%;
@@ -101,11 +101,12 @@ body {
     box-shadow: 2px 2px 1px 1px;
 }
 
-.dialog-box img {
+.dialog-box .avatar {
     width: auto;
     height: 30px;
     border-radius: 90%;
     padding-right: 5px;
+    margin-bottom: auto;
 }
 
 .dialog-box .box-img {

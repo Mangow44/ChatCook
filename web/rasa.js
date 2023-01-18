@@ -20,9 +20,6 @@ function sendMessage(msg) {
     let userBox = createBox(msg, "right", "user");
     dialog.appendChild(userBox);
 
-    // let botBox = createBox("Typing...", "left", "bot");
-    // dialog.appendChild(botBox);
-
     fetch("http://localhost:5005/webhooks/rest/webhook", {
         method: "POST",
         body: JSON.stringify({ message: msg }),
@@ -30,11 +27,11 @@ function sendMessage(msg) {
         .then((response) => response.json())
         .then((data) => {
             data.forEach((message) => {
-                if (message["text"]) {
+                if (message["text"])
                     dialog.appendChild(
                         createBox(message["text"], "left", "bot")
                     );
-                } else if (message["image"]) {
+                if (message["image"]) {
                     let botBox = createBox("", "left", "bot");
                     botBox.removeChild(botBox.children[1]);
                     let img = document.createElement("img");
@@ -64,6 +61,7 @@ function createBox(msg, position, sender) {
         let picture = document.createElement("img");
         picture.setAttribute("src", "./chatcookpic.png");
         picture.setAttribute("alt", "chatcook's picture");
+        picture.setAttribute("class", "avatar");
         box.appendChild(picture);
     }
     box.appendChild(text);
