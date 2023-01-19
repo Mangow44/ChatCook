@@ -20,16 +20,29 @@ function sendMessage(msg) {
     let userBox = createBox(msg, "right", "user");
     dialog.appendChild(userBox);
 
-    let botBox = createBox("Typing...", "left", "bot");
-    dialog.appendChild(botBox);
-
     fetch("http://localhost:5005/webhooks/rest/webhook", {
         method: "POST",
         body: JSON.stringify({ message: msg }),
     })
         .then((response) => response.json())
         .then((data) => {
-            botBox.children[1].innerText = data[0].text;
+            data.forEach((message) => {
+                if (message["text"])
+                    dialog.appendChild(
+                        createBox(message["text"], "left", "bot")
+                    );
+                if (message["image"]) {
+                    let botBox = createBox("", "left", "bot");
+                    botBox.removeChild(botBox.children[1]);
+                    let img = document.createElement("img");
+                    img.setAttribute("src", message["image"]);
+                    img.setAttribute("alt", "image from rasa");
+                    img.setAttribute("referrerpolicy", "no-referrer");
+                    img.setAttribute("class", "box-img");
+                    botBox.appendChild(img);
+                    dialog.appendChild(botBox);
+                }
+            });
         })
         .catch((error) => {
             botBox.children[1].style.color = "red";
@@ -48,6 +61,7 @@ function createBox(msg, position, sender) {
         let picture = document.createElement("img");
         picture.setAttribute("src", "./chatcookpic.png");
         picture.setAttribute("alt", "chatcook's picture");
+        picture.setAttribute("class", "avatar");
         box.appendChild(picture);
     }
     box.appendChild(text);
