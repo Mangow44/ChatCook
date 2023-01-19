@@ -1,0 +1,57 @@
+// Master file defining the intents
+%[&greetings](10)
+    ~[hello][!?]
+
+%[&goodbye](10)
+    ~[bye][!?]
+
+%[&questionning](10)
+    [&i] want to ~[action] a ~[recipe](recipe) [.?][!?]
+    ~[possibility] [&i] have a ~[recipe](recipe)[,?] [please?] ?
+    ~[possibility] you give me a ~[recipe](recipe) [please?] ?
+    ~[possibility] you [please?] find ~[recipe]?
+    ~[possibility] you find how to cook ~[recipe](recipe)?
+
+%[&full_recipe](10)
+    ~[yes] [please?][!?]
+    ~[possibility] [&i] have the full recipe[,?] [please?]?
+
+
+// File defining the aliases and slots
+~[hello]
+    hello
+    hi
+    good morning
+    yo bro
+    sup
+    hey there
+    hello there
+~[recipe]
+    tomato
+    Ratatouille
+    Lasagna
+    Confiture
+    Tarte
+    chili
+    chicken
+
+~[yes]
+    yes
+
+~[possibility]
+    can
+    could
+
+~[action]
+    cook
+    do
+
+~[bye]
+    bye
+    goodbye
+    see you
+    tchuss
+    ciao
+    bye bye
+    see you soon
+    xoxo
