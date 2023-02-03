@@ -35,5 +35,5 @@ stories:
 
     - story: helping to cook
       steps:
-          - intent: questioning
+          - intent: ask_recipe
           - action: utter_cooking

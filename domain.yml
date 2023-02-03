@@ -9,7 +9,7 @@ intents:
     - mood_unhappy
     - bot_challenge
     - quoi
-    - questioning
+    - ask_recipe
 
 responses:
     utter_greet:
@@ -36,6 +36,12 @@ responses:
 
 actions:
     - action_feur
+    - utter_greet
+    - utter_cheer_up
+    - utter_did_that_help
+    - utter_goodbye
+    - utter_cooking
+    - utter_happy
 
 session_config:
     session_expiration_time: 60
