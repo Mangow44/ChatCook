@@ -9,7 +9,8 @@ intents:
     - mood_unhappy
     - bot_challenge
     - quoi
-    - ask_recipe
+    - search_recipe
+    - repeat_recipe
 
 responses:
     utter_greet:
@@ -31,17 +32,26 @@ responses:
     utter_iamabot:
         - text: "I am a bot, powered by Rasa."
 
-    utter_cooking:
-        - text: "Do you want to cook a {recipe} ?"
+    utter_ask_recipe:
+        - text: "What do you want to cook ?"
+
+    utter_remember:
+        - text: "Thanks, i'll remember that."
 
 actions:
     - action_feur
-    - utter_greet
-    - utter_cheer_up
-    - utter_did_that_help
-    - utter_goodbye
-    - utter_cooking
-    - utter_happy
+    - action_say_recipe
+
+entities:
+    - recipe
+
+slots:
+    recipe:
+        type: text
+        influence_conversation: true
+        mappings:
+        - type: from_entity
+          entity: recipe
 
 session_config:
     session_expiration_time: 60

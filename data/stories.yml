@@ -33,7 +33,19 @@ stories:
           - intent: quoi
           - action: action_feur
 
-    - story: helping to cook
+    - story: search for a recipe
       steps:
-          - intent: ask_recipe
-          - action: utter_cooking
+          - intent: greet
+          - action: utter_greet
+          - intent: repeat_recipe
+          - action: action_say_recipe
+          - intent: search_recipe
+            entities:
+                - recipe: ratatouille
+          - slot_was_set:
+                - recipe: ratatouille
+          - action: utter_remember
+          - intent: repeat_recipe
+          - action: action_say_recipe
+          - intent: goodbye
+          - action: utter_goodbye

@@ -4,47 +4,31 @@ nlu:
     - intent: greet
       examples: |
           - hey
-          - hey !
-          - Hey
           - hello
-          - Hello
           - hi
-          - hi!
-          - Hi
-          - Hi!
-          - hey there
           - hello there
-          - hi there
-          - Yo
-          - Sup!
-          - sup
-          - let's go
-          - hey dude
           - good morning
           - good evening
+          - moin
+          - hey there
+          - let's go
+          - hey dude
           - goodmorning
           - goodevening
           - good afternoon
 
     - intent: goodbye
       examples: |
-          - good bye
+          - cu
+          - good by
+          - cee you later
           - good night
           - bye
           - goodbye
-          - have a nice day :)
+          - have a nice day
           - see you around
           - bye bye
           - see you later
-          - Bye!
-          - Good bye :)
-          - ciao
-          - bye bye!
-          - see you!
-          - See you soon!
-          - Xoxo
-          - xoxo
-          - XOXO
 
     - intent: affirm
       examples: |
@@ -110,43 +94,16 @@ nlu:
       examples: |
           - quoi ?
 
-    - intent: ask_recipe
+    - intent: search_recipe
       examples: |
-          - Can I have a [Lasagna](recipe) please ?
-          - Can you give me a [chicken](recipe)?
-          - Could you give me a [Lasagna](recipe) please?
-          - I want to do a [Meat Chili](recipe)
-          - I want to do a [chicken](recipe)!
-          - can i have a [chicken](recipe) please ?
-          - could I have a [Meat Chili](recipe) ?
-          - i want to cook a [Lasagna](recipe)!
-          - i want to do a [chicken](recipe)
-          - i want to do a [Lasagna](recipe)!
-          - Could I have a [chicken](recipe) ?
-          - Could you find how to cook [Tarte](recipe)?
-          - Could you give me a [Lasagna](recipe) ?
-          - I want to do a [Tarte](recipe)!
-          - could I have a [Confiture](recipe) please ?
-          - could you find how to cook [Lasagna](recipe)?
-          - i want to do a [chili](recipe).
+          - Can you find [Lasagnes](recipe) ?
+          - Can you find [Ratatouille](recipe) ?
+          - Can you please find [Meat Chili](recipe) ?
+          - Could you find how to cook [Chicken and Rice Soup](recipe)?
 
-    - intent: full_recipe
+    - intent: repeat_recipe
       examples: |
-          - yes!
-          - Yes
-          - yes
-          - Yes !
-          - yes !
-          - YES
-          - YES!
-          - y
-          - Y
-          - can i have the full recipe?
-          - Can i have the full recipe?
-          - could i have the full recipe?
-          - can i have the full recipe, please?
-          - Could i have the full recipe, please?
-          - Could i have the full recipe ?
-          - can I have the full recipe, please
-          - could I have the full recipe, please
-          - can I have the full recipe please?
+          - What is my recipe 
+          - Tell me my recipe
+          - Do you know my recipe
+          - Repeat my recipe
