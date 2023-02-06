@@ -11,10 +11,16 @@ intents:
     - quoi
     - search_recipe
     - repeat_recipe
+    - ask_recipe
+    - select_recipe
 
 responses:
     utter_greet:
+        - text: "Hello"
         - text: "Hey! How are you?"
+        - text: "Hello ! What's up ? :)"
+        - text: "Hello ! How are you ?"
+
 
     utter_cheer_up:
         - text: "Here is something to cheer you up:"
@@ -22,12 +28,16 @@ responses:
 
     utter_did_that_help:
         - text: "Did that help you?"
+        - text: "Did I manage to solve some of your problems ?"
 
     utter_happy:
         - text: "Great, carry on!"
+        - text: "I am so glad to hear it!"
 
     utter_goodbye:
         - text: "Bye"
+        - text: "Bye bye"
+        - text: "Love you ! Bye"
 
     utter_iamabot:
         - text: "I am a bot, powered by Rasa."
@@ -41,6 +51,12 @@ responses:
 actions:
     - action_feur
     - action_say_recipe
+    - utter_greet
+    - utter_cheer_up
+    - utter_did_that_help
+    - utter_goodbye
+    - utter_cooking
+    - utter_happy
 
 entities:
     - recipe

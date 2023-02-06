@@ -57,3 +57,58 @@ class ActionRechercheRecipes(Action):
         else:
             dispatcher.utter_message(text=f"Your recipe is {recipe}")
         return []
+
+class ActionHello(Action):
+    def name(self) -> Text:
+        return "utter_greet"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Bonjour ! Comment allez-vous ?")
+
+        return []
+
+class ActionByebye(Action):
+    def name(self) -> Text:
+        return "utter_goodbye"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Ciao")
+
+        return []
+
+class ActionHappy(Action):
+    def name(self) -> Text:
+        return "utter_happy"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="I am so happy for youuuu :))")
+
+        return []
+
+class ActionCheerUp(Action):
+    def name(self) -> Text:
+        return "utter_cheer_up"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Courage ! Tout va bien se passer !")
+
+        return []
+
+class ActionHelp(Action):
+    def name(self) -> Text:
+        return "utter_did_that_help"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Did that help ?")
+
+        return []
