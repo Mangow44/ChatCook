@@ -21,7 +21,6 @@ responses:
         - text: "Hello ! What's up ? :)"
         - text: "Hello ! How are you ?"
 
-
     utter_cheer_up:
         - text: "Here is something to cheer you up:"
           image: "https://i.imgur.com/nGF1K8f.jpg"
@@ -51,11 +50,11 @@ responses:
 actions:
     - action_feur
     - action_say_recipe
+    - action_research_recipe
     - utter_greet
     - utter_cheer_up
     - utter_did_that_help
     - utter_goodbye
-    - utter_cooking
     - utter_happy
 
 entities:

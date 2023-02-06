@@ -49,3 +49,12 @@ stories:
           - action: action_say_recipe
           - intent: goodbye
           - action: utter_goodbye
+
+    - story: helping to cook
+      steps:
+        - intent: search_recipe
+          entities:
+                - recipe: ratatouille
+        - slot_was_set:
+              - recipe: ratatouille
+        - action: action_research_recipe
