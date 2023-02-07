@@ -127,15 +127,7 @@ nlu:
 
     - intent: full_recipe
       examples: |
-          - yes !
-          - YES
-          - YES!
-          - y
-          - Y
           - can i have the full recipe?
-          - Can i have the full recipe?
-          - could i have the full recipe?
-          - can i have the full recipe, please?
           - Could i have the full recipe, please?
           - Could i have the full recipe ?
           - can I have the full recipe, please

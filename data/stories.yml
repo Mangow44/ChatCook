@@ -63,4 +63,6 @@ stories:
               - recipe_choice: 1
         - slot_was_set:
               - recipe_choice: 1
+        - action: action_display_ingredients
+        - intent: full_recipe
         - action: action_select_recipe

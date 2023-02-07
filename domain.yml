@@ -13,6 +13,7 @@ intents:
     - repeat_recipe
     - ask_recipe
     - select_recipe
+    - full_recipe
 
 responses:
     utter_greet:
@@ -52,6 +53,7 @@ actions:
     - action_say_recipe
     - action_research_recipe
     - action_select_recipe
+    - action_display_ingredients
     - utter_greet
     - utter_cheer_up
     - utter_did_that_help

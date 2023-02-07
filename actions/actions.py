@@ -116,9 +116,9 @@ class ActionSelectRecipe(Action):
 
         return []
 
-class ActionSelectRecipe(Action):
+class ActionDisplayIngredients(Action):
     def name(self) -> Text:
-        return "action_select_recipe"
+        return "action_display_ingredients"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -135,9 +135,17 @@ class ActionSelectRecipe(Action):
         recipe = reader[reader['Title'].str.contains(recipe_name, regex=False, na=False, case=False)]
 
         if not(recipe.empty):
-            reply = "Here is your recipe\n"
+            reply = "Here are the ingredients you will need :\n"
 
-            reply += f"{recipe['Instructions'].values[0]}"
+            list_ingredients = recipe['Ingredients'].values[0]
+            list_ingredients = list_ingredients[2:]
+            list_ingredients = list_ingredients[:-2]
+            list_ingredients = list_ingredients.split("', '")
+
+            for i in list_ingredients:
+                reply += "- " + i + "\n"
+
+            reply += "\nDo you want to see the full recipe ?"
 
             dispatcher.utter_message(reply)
         else:
