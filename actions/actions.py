@@ -106,10 +106,38 @@ class ActionSelectRecipe(Action):
         recipe = reader[reader['Title'].str.contains(recipe_name, regex=False, na=False, case=False)]
 
         if not(recipe.empty):
-            # TODO
             reply = "Here is your recipe\n"
 
-            reply += f" {recipe['Instructions']}"
+            reply += f"{recipe['Instructions'].values[0]}"
+
+            dispatcher.utter_message(reply)
+        else:
+            dispatcher.utter_message(f"I could not find recipes matching with {recipe['Title']}")
+
+        return []
+
+class ActionSelectRecipe(Action):
+    def name(self) -> Text:
+        return "action_select_recipe"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        recipe_choice = tracker.get_slot('recipe_choice')
+        recipe_list = tracker.get_slot('recipe_list')
+
+        reader = pd.read_csv('./data/test_liste.csv')
+
+        recipe_name = recipe_list[(int(recipe_choice)-1)]
+
+        #reader = pd.read_csv('./data/test_liste.csv')
+        recipe = reader[reader['Title'].str.contains(recipe_name, regex=False, na=False, case=False)]
+
+        if not(recipe.empty):
+            reply = "Here is your recipe\n"
+
+            reply += f"{recipe['Instructions'].values[0]}"
 
             dispatcher.utter_message(reply)
         else:
