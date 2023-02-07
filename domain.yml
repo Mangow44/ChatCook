@@ -51,6 +51,7 @@ actions:
     - action_feur
     - action_say_recipe
     - action_research_recipe
+    - action_select_recipe
     - utter_greet
     - utter_cheer_up
     - utter_did_that_help
@@ -59,6 +60,8 @@ actions:
 
 entities:
     - recipe
+    - recipe_choice
+    - recipe_list
 
 slots:
     recipe:
@@ -67,6 +70,20 @@ slots:
         mappings:
         - type: from_entity
           entity: recipe
+
+    recipe_choice:
+        type: text
+        influence_conversation: true
+        mappings:
+            - type: from_entity
+              entity: recipe_choice
+
+    recipe_list:
+        type: list
+        influence_conversation: true
+        mappings:
+            - type: from_entity
+              entity: recipe_list
 
 session_config:
     session_expiration_time: 60

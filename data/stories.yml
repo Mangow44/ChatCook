@@ -54,7 +54,13 @@ stories:
       steps:
         - intent: search_recipe
           entities:
-                - recipe: ratatouille
+              - recipe: ratatouille
         - slot_was_set:
               - recipe: ratatouille
         - action: action_research_recipe
+        - intent: select_recipe
+          entities:
+              - recipe_choice: 1
+        - slot_was_set:
+              - recipe_choice: 1
+        - action: action_select_recipe

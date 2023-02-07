@@ -144,6 +144,10 @@ nlu:
 
     - intent: select_recipe
       examples: |
-            - i want the [number](number)
-            - [2](number)
-            - the [1](number)
+          - i want the [number](recipe_choice)
+          - [2](recipe_choice)
+          - the [1](recipe_choice)
+          - I want number [4](recipe_choice)
+          - [6](recipe_choice)
+          - i want [5](recipe_choice)
+          - number [20](recipe_choice)
