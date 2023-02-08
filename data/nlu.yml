@@ -4,91 +4,63 @@ nlu:
     - intent: greet
       examples: |
           - hey
+          - yo
           - hello
           - hi
-          - hello there
-          - good morning
-          - good evening
-          - moin
-          - hey there
-          - let's go
-          - hey dude
-          - goodmorning
-          - goodevening
-          - good afternoon
+          - bonjour
+          - coucou
+          - heya
+          - b'jour
+          - Bonjour !!
+          - Coucou :)
+          - Bonsoir
+          - bonsoir
 
     - intent: goodbye
       examples: |
-          - cu
-          - good by
-          - cee you later
-          - good night
-          - bye
-          - goodbye
-          - have a nice day
-          - see you around
-          - bye bye
-          - see you later
+          - au revoir
+          - @+
+          - a bientot
+          - à bientôt
+          - a plus
+          - a demain
+          - bonne nuit
+          - a +
+          - a+
+          - ++
 
-    - intent: affirm
-      examples: |
-          - yes
-          - y
-          - indeed
-          - of course
-          - that sounds good
-          - correct
-
-    - intent: deny
-      examples: |
-          - no
-          - n
-          - never
-          - I don't think so
-          - don't like that
-          - no way
-          - not really
 
     - intent: mood_great
       examples: |
           - perfect
-          - great
-          - amazing
-          - feeling like a king
-          - wonderful
-          - I am feeling very good
-          - I am great
-          - I am amazing
-          - I am going to save the world
-          - super stoked
-          - extremely good
-          - so so perfect
-          - so good
-          - so perfect
+          - super
+          - parfait
+          - géant
+          - je me sens bien
+          - je me sens très bien
+          - je me sens super bien
+          - incroyable
+          - fou
+          - top
+          - j'me sens super
 
     - intent: mood_unhappy
       examples: |
-          - my day was horrible
-          - I am sad
-          - I don't feel very well
-          - I am disappointed
-          - super sad
-          - I'm so sad
-          - sad
-          - very sad
-          - unhappy
-          - not good
-          - not very good
-          - extremly sad
-          - so saad
-          - so sad
+          - je suis triste
+          - sadj
+          - je suis si triste
+          - ouin
+          - très triste
+          - TRES triste
+          - je ne me sens pas très bien
+          - bof
 
     - intent: bot_challenge
       examples: |
-          - are you a bot?
-          - are you a human?
-          - am I talking to a bot?
-          - am I talking to a human?
+          - est ce que je parle a un humain ?
+          - tu es un bot ?
+          - tu es un bot
+          - es tu humain
 
     - intent: quoi
       examples: |
@@ -96,54 +68,87 @@ nlu:
 
     - intent: search_recipe
       examples: |
-          - Can you find [Lasagnes](recipe) ?
-          - Can you find [Ratatouille](recipe) ?
-          - Can you please find [Meat Chili](recipe) ?
-          - Could you find how to cook [Chicken and Rice Soup](recipe)?
-          - Can I have a [Lasagna](recipe) please ?
-          - Can you give me a [chicken](recipe)?
-          - Could you give me a [Lasagna](recipe) please?
-          - I want to do a [Meat Chili](recipe)
-          - I want to do a [chicken](recipe)!
-          - can i have a [chicken](recipe) please ?
-          - could I have a [Meat Chili](recipe) ?
-          - i want to cook a [Lasagna](recipe)!
-          - i want to do a [chicken](recipe)
-          - i want to do a [Lasagna](recipe)!
-          - Could I have a [chicken](recipe) ?
-          - Could you find how to cook [Tarte](recipe)?
-          - Could you give me a [Lasagna](recipe) ?
-          - I want to do a [Tarte](recipe)!
-          - could I have a [Confiture](recipe) please ?
-          - could you find how to cook [Lasagna](recipe)?
-          - i want to do a [chili](recipe).
+          - Peux-tu trouver [gâteau](recipe) ?
+          - Peux-tu trouver [Ratatouille](recipe) ?
+          - Pouvez-vous trouver [Chili à la viande] (recipe) svp?
+          - Pourriez-vous trouver comment cuisiner [Soupe au poulet et au riz] (recipe) ?
+          - Puis-je avoir une [Lasagne](recipe) s'il vous plait ?
+          - Pouvez-vous me donner un [cheesecake](recipe) ?
+          - Pourriez-vous me donner une [Lasagne](recipe) s'il vous plaît ?
+          - Je veux faire un [Chili à la viande](recipe)
+          - Je veux faire un [cocktail](recipe) !
+          - puis-je avoir un [poulet](recipe) s'il vous plait ?
+          - puis-je avoir un [poulet](recipe) svp
+          - pourrais-je avoir un [Chili à la viande](recipe) ?
+          - je veux cuisiner un [oignon](recipe) !
+          - je veux faire un [poulet](recipe)
+          - je veux faire une [saucisse](recipe) !
+          - Pourrais-je avoir une [citrouille](recipe) ?
+          - Pourriez-vous trouver comment cuisiner [Tarte](recipe) ?
+          - Pourriez-vous me donner une [Lasagne](recipe) ?
+          - Je veux faire une [Tarte](recipe) !
+          - pourrais-je avoir une [Confiture](recipe) s'il vous plait ?
+          - pourriez-vous trouver comment cuisiner le [cacao](recipe) ?
+          - je veux faire un [chili](recipe).
+          - Peux-tu trouver [gâteau](recipe) ?
+          - Je veux cuisiner une [Ratatouille](recipe) ?
+          - est ce que je peux avoir la recette [Chili](recipe) ?
+          - peux-tu me trouver comment cuisiner du [Poulet](recipe)?
+          - Je veux des [Lasagne](recipe) svp
+          - est ce que il y a une recette de [cheesecake](recipe)?
+          - [tarte](recipe) stp?
+          - Je veux des [saussices](recipe)
+          - est ce que tu as une recette de [poulet](recipe) ?
+          - je veux cuisiner des [tomates](recipe) s'il te plait
+          - des [salsifis](recipe)
+          - [carotte](recipe)
+          - Comment faire des [Lasagna](recipe) ?
+          - comment faire un [Lasagna](recipe) ?
+          - Comment faire une [Lasagna](recipe)
+          - Comment cuisiner un [Lasagna](recipe) ?
+          - comment cuisiner des [Lasagna](recipe)
+          - comment cuisiner une [Lasagna](recipe) ?
 
     - intent: repeat_recipe
       examples: |
-          - What is my recipe 
-          - Tell me my recipe
-          - Do you know my recipe
-          - Repeat my recipe
+          - quelle est ma recette ?
+          - Quelle est la recette
+          - dis moi ma recette
+          - répète ma recette
+          - c'est quoi ma recette ?
 
     - intent: full_recipe
       examples: |
-          - yes !
-          - YES
-          - YES!
-          - y
-          - Y
-          - can i have the full recipe?
-          - Can i have the full recipe?
-          - could i have the full recipe?
-          - can i have the full recipe, please?
-          - Could i have the full recipe, please?
-          - Could i have the full recipe ?
-          - can I have the full recipe, please
-          - could I have the full recipe, please
-          - can I have the full recipe please?
+          - oui
+          - Oui
+          - oui !
+          - oui :)
+          - oui svp
+          - Oui stp
+          - oui s'il te plait
+          - est ce que je peux avoir la recette entière svp ?
+          - est ce que je peux avoir la recette ?
+          - la recette s'il te plait
+          - la complète
 
     - intent: select_recipe
       examples: |
-            - i want the [number](number)
-            - [2](number)
-            - the [1](number)
+          - i want the [number](recipe_choice)
+          - [2](recipe_choice)
+          - the [1](recipe_choice)
+          - I want number [4](recipe_choice)
+          - [6](recipe_choice)
+          - i want [5](recipe_choice)
+          - number [20](recipe_choice)
+          - numéro [30](recipe_choice)
+          - je veux le numéro [12](recipe_choice)
+          - Numéro [6](recipe_choice) s'il te plait
+          - le [4](recipe_choice) svp
+          - le [4](recipe_choice)
+          - [28](recipe_choice) stp
+          - je veux le [17](recipe_choice) stp
+          - j'veux [15](recipe_choice)
+          - [14](recipe_choice) stp
+          - [23](recipe_choice) svp
+          - [5](recipe_choice)
+

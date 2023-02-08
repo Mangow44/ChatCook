@@ -4,38 +4,15 @@
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
 
-
-# This is a simple example for a custom action which utters "Hello World!"
-
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
-
+import pandas as pd
 from typing import Any, Text, Dict, List
-
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
+from googletrans import Translator
 
-import csv
-
-import pandas as pd
-
-recipe_list=[]
+recipe_list = []
+translator = Translator()
 
 class ActionFeur(Action):
     def name(self) -> Text:
@@ -44,6 +21,7 @@ class ActionFeur(Action):
     def run(self, dispatcher: CollectingDispatcher,
         tracker: Tracker,
         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
         dispatcher.utter_message(text="Feur !")
 
         return []
@@ -59,9 +37,9 @@ class ActionSayRecipe(Action):
         recipe = tracker.get_slot("recipe")
 
         if not recipe:
-            dispatcher.utter_message(text="I don't know your recipe")
+            dispatcher.utter_message(text="Je ne connais pas encore votre recette")
         else:
-            dispatcher.utter_message(text=f"Your recipe is {recipe}")
+            dispatcher.utter_message(text=f"Votre recette est {recipe}")
         return []
 
 class ActionResearchRecipe(Action):
@@ -73,78 +51,85 @@ class ActionResearchRecipe(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         recipe = tracker.get_slot('recipe')
+        recipe = translator.translate(recipe, dest='en').text
 
-        reader = pd.read_csv('./data/test_liste.csv')
+        reader = pd.read_csv('./csv/recipes.csv')
         reader = reader[reader['Title'].str.contains(recipe, regex=False, na=False, case=False)]
         recipe_list = reader['Title'].tolist()
-        #recipe_list.append(reader[reader['Title'].lower().isin(recipe.lower())])
-        '''with open('./data/recipes.csv', 'r') as file:
-            reader = csv.DictReader(file)
-            recipe_list.clear()
-            recipe_list.append([row['Title'] for row in reader if recipe.lower() in row['Title'].lower()])'''
 
         if recipe_list:
             reply = "Which recipe do you want to cook ?"
             for i, item in enumerate(recipe_list):
-                reply += f"\n{i + 1} - {item}"
-            dispatcher.utter_message(text=reply)
+                if i<30:
+                    reply += f"\n{i + 1} - {item}"
+                else:
+                    break
+            dispatcher.utter_message(text=translator.translate(str(reply), dest='fr').text)
         else:
-            dispatcher.utter_message(text=f"I could not find recipes matching with {recipe}")
+            dispatcher.utter_message(text=f"Je n'ai pas trouvé de recettes correspondant à {recipe}")
 
-        return []
+        return [SlotSet("recipe_list", recipe_list)]
 
-
-class ActionHello(Action):
+class ActionSelectRecipe(Action):
     def name(self) -> Text:
-        return "utter_greet"
+        return "action_select_recipe"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Bonjour ! Comment allez-vous ?")
+
+        recipe_choice = tracker.get_slot('recipe_choice')
+        recipe_list = tracker.get_slot('recipe_list')
+
+        reader = pd.read_csv('./csv/recipes.csv')
+
+        recipe_name = recipe_list[(int(recipe_choice)-1)]
+
+        recipe = reader[reader['Title'].str.contains(recipe_name, regex=False, na=False, case=False)]
+
+        if not(recipe.empty):
+            reply = "Here is your recipe\n"
+
+            reply += f"{recipe['Instructions'].values[0]}"
+
+            dispatcher.utter_message(text=translator.translate(reply, dest='fr').text)
+        else:
+            dispatcher.utter_message(text=f"Je n'ai pas trouvé de recettes correspondant à {recipe['Title']}")
 
         return []
 
-class ActionByebye(Action):
+class ActionDisplayIngredients(Action):
     def name(self) -> Text:
-        return "utter_goodbye"
+        return "action_display_ingredients"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Ciao")
 
-        return []
+        recipe_choice = tracker.get_slot('recipe_choice')
+        recipe_list = tracker.get_slot('recipe_list')
 
-class ActionHappy(Action):
-    def name(self) -> Text:
-        return "utter_happy"
+        reader = pd.read_csv('./csv/recipes.csv')
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="I am so happy for youuuu :))")
+        recipe_name = recipe_list[(int(recipe_choice)-1)]
 
-        return []
+        recipe = reader[reader['Title'].str.contains(recipe_name, regex=False, na=False, case=False)]
 
-class ActionCheerUp(Action):
-    def name(self) -> Text:
-        return "utter_cheer_up"
+        if not(recipe.empty):
+            reply = "Here are the ingredients you will need :\n"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Courage ! Tout va bien se passer !")
+            list_ingredients = recipe['Ingredients'].values[0]
+            list_ingredients = list_ingredients[2:]
+            list_ingredients = list_ingredients[:-2]
+            list_ingredients = list_ingredients.split("', '")
 
-        return []
+            for i in list_ingredients:
+                reply += "- " + i + "\n"
 
-class ActionHelp(Action):
-    def name(self) -> Text:
-        return "utter_did_that_help"
+            reply += "\nDo you want to see the full recipe ?"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Did that help ?")
+            dispatcher.utter_message(text=translator.translate(reply, dest='fr').text)
+        else:
+            dispatcher.utter_message(text=f"Je n'ai pas trouvé de recettes correspondant à {recipe['Title']}")
 
         return []

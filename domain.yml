@@ -3,8 +3,6 @@ version: "3.1"
 intents:
     - greet
     - goodbye
-    - affirm
-    - deny
     - mood_great
     - mood_unhappy
     - bot_challenge
@@ -13,52 +11,48 @@ intents:
     - repeat_recipe
     - ask_recipe
     - select_recipe
+    - full_recipe
 
 responses:
     utter_greet:
-        - text: "Hello"
-        - text: "Hey! How are you?"
-        - text: "Hello ! What's up ? :)"
-        - text: "Hello ! How are you ?"
-
-    utter_cheer_up:
-        - text: "Here is something to cheer you up:"
-          image: "https://i.imgur.com/nGF1K8f.jpg"
+        - text: "Bonjour, commment puis-je vous aider ? "
+        - text: "Bonjour, que veux tu cuisinier ?"
+        - text: "Salut ! Que veux tu cuisinier ? :)"
+        - text: "Salut ! T'as faim ?"
 
     utter_did_that_help:
-        - text: "Did that help you?"
-        - text: "Did I manage to solve some of your problems ?"
+        - text: "Est-ce que ça vous as aidé?"
+        - text: "Ai-je réussi à résoudre certains de vos problèmes ?"
 
     utter_happy:
-        - text: "Great, carry on!"
-        - text: "I am so glad to hear it!"
+        - text: "Super, continuez !"
+        - text: "Je suis content de l'entendre !"
 
     utter_goodbye:
         - text: "Bye"
-        - text: "Bye bye"
-        - text: "Love you ! Bye"
+        - text: "Au revoir"
+        - text: "Je t'aime ! Bye"
 
     utter_iamabot:
-        - text: "I am a bot, powered by Rasa."
+        - text: "Je suis un bot qui utilise Rasa."
 
     utter_ask_recipe:
-        - text: "What do you want to cook ?"
+        - text: "Que veux-tu cuisiner ?"
 
     utter_remember:
-        - text: "Thanks, i'll remember that."
+        - text: "Merci, je m'en souviendrai."
 
 actions:
     - action_feur
     - action_say_recipe
     - action_research_recipe
-    - utter_greet
-    - utter_cheer_up
-    - utter_did_that_help
-    - utter_goodbye
-    - utter_happy
+    - action_select_recipe
+    - action_display_ingredients
 
 entities:
     - recipe
+    - recipe_choice
+    - recipe_list
 
 slots:
     recipe:
@@ -67,6 +61,20 @@ slots:
         mappings:
         - type: from_entity
           entity: recipe
+
+    recipe_choice:
+        type: text
+        influence_conversation: true
+        mappings:
+            - type: from_entity
+              entity: recipe_choice
+
+    recipe_list:
+        type: list
+        influence_conversation: true
+        mappings:
+            - type: from_entity
+              entity: recipe_list
 
 session_config:
     session_expiration_time: 60
