@@ -15,36 +15,32 @@ intents:
 
 responses:
     utter_greet:
-        - text: "Hello"
-        - text: "Hey! How are you?"
-        - text: "Hello ! What's up ? :)"
-        - text: "Hello ! How are you ?"
-
-    utter_cheer_up:
-        - text: "Here is something to cheer you up:"
-          image: "https://i.imgur.com/nGF1K8f.jpg"
+        - text: "Bonjour"
+        - text: "Comment vas-tu ?"
+        - text: "Salut ! Quoi de neuf ? :)"
+        - text: "Salut ! Comment vas-tu ?"
 
     utter_did_that_help:
-        - text: "Did that help you?"
-        - text: "Did I manage to solve some of your problems ?"
+        - text: "Est-ce que ça t'a aidé?"
+        - text: "Ai-je réussi à résoudre certains de vos problèmes ?"
 
     utter_happy:
-        - text: "Great, carry on!"
-        - text: "I am so glad to hear it!"
+        - text: "Super, continue !"
+        - text: "Je suis content de l'entendre !"
 
     utter_goodbye:
         - text: "Bye"
-        - text: "Bye bye"
-        - text: "Love you ! Bye"
+        - text: "Au revoir"
+        - text: "Je t'aime ! Bye"
 
     utter_iamabot:
-        - text: "I am a bot, powered by Rasa."
+        - text: "Je suis un bot qui utilise Rasa."
 
     utter_ask_recipe:
-        - text: "What do you want to cook ?"
+        - text: "Que veux-tu cuisiner ?"
 
     utter_remember:
-        - text: "Thanks, i'll remember that."
+        - text: "Merci, je m'en souviendrai."
 
 actions:
     - action_feur
