@@ -60,7 +60,8 @@ class ActionResearchRecipe(Action):
         if recipe_list:
             reply = "Which recipe do you want to cook ?"
             for i, item in enumerate(recipe_list):
-                reply += f"\n{i + 1} - {item}"
+                if i<30:
+                    reply += f"\n{i + 1} - {item}"
             dispatcher.utter_message(text=translator.translate(reply, dest='fr').text)
         else:
             dispatcher.utter_message(text=f"Je n'ai pas trouvé de recettes correspondant à {recipe}")

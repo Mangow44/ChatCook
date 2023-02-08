@@ -16,6 +16,11 @@
     ~[yes] [please?][!?]
     ~[possibility] [&i] have the full recipe[,?] [please?]?
 
+%[&question](15)
+    je veux cuisiner une ~[recette](recipe) [.?] [!?]
+    est ce que je peux avoir la recette ~[recette](recipe) [stp?] [!?]
+    la recette ~[recette](recipe) [svp?] [!?]
+
 
 // File defining the aliases and slots
 ~[hello]
