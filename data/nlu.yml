@@ -6,16 +6,6 @@ nlu:
           - hey
           - hello
           - hi
-          - hello there
-          - good morning
-          - good evening
-          - moin
-          - hey there
-          - let's go
-          - hey dude
-          - goodmorning
-          - goodevening
-          - good afternoon
           - bonjour
           - coucou
           - heya
@@ -27,16 +17,6 @@ nlu:
 
     - intent: goodbye
       examples: |
-          - cu
-          - good by
-          - cee you later
-          - good night
-          - bye
-          - goodbye
-          - have a nice day
-          - see you around
-          - bye bye
-          - see you later
           - au revoir
           - @+
           - a bientot
@@ -44,23 +24,14 @@ nlu:
           - a plus
           - a demain
           - bonne nuit
+          - a +
+          - a+
+          - ++
+
 
     - intent: mood_great
       examples: |
           - perfect
-          - great
-          - amazing
-          - feeling like a king
-          - wonderful
-          - I am feeling very good
-          - I am great
-          - I am amazing
-          - I am going to save the world
-          - super stoked
-          - extremely good
-          - so so perfect
-          - so good
-          - so perfect
           - super
           - parfait
           - géant
@@ -74,20 +45,6 @@ nlu:
 
     - intent: mood_unhappy
       examples: |
-          - my day was horrible
-          - I am sad
-          - I don't feel very well
-          - I am disappointed
-          - super sad
-          - I'm so sad
-          - sad
-          - very sad
-          - unhappy
-          - not good
-          - not very good
-          - extremly sad
-          - so saad
-          - so sad
           - je suis triste
           - sadj
           - je suis si triste
@@ -99,10 +56,6 @@ nlu:
 
     - intent: bot_challenge
       examples: |
-          - are you a bot?
-          - are you a human?
-          - am I talking to a bot?
-          - am I talking to a human?
           - est ce que je parle a un humain ?
           - tu es un bot ?
           - tu es un bot
@@ -114,28 +67,29 @@ nlu:
 
     - intent: search_recipe
       examples: |
-          - Can you find [cake](recipe) ?
-          - Can you find [Ratatouille](recipe) ?
-          - Can you please find [Meat Chili](recipe) ?
-          - Could you find how to cook [Chicken and Rice Soup](recipe)?
-          - Can I have a [Lasagna](recipe) please ?
-          - Can you give me a [cheesecake](recipe)?
-          - Could you give me a [Lasagna](recipe) please?
-          - I want to do a [Meat Chili](recipe)
-          - I want to do a [cocktail](recipe)!
-          - can i have a [chicken](recipe) please ?
-          - could I have a [Meat Chili](recipe) ?
-          - i want to cook a [onion](recipe)!
-          - i want to do a [chicken](recipe)
-          - i want to do a [sausage](recipe)!
-          - Could I have a [pumpkin](recipe) ?
-          - Could you find how to cook [Tarte](recipe)?
-          - Could you give me a [Lasagna](recipe) ?
-          - I want to do a [Tarte](recipe)!
-          - could I have a [Confiture](recipe) please ?
-          - could you find how to cook [cocoa](recipe)?
-          - i want to do a [chili](recipe).
-          - Can you find [cake](recipe) ?
+          - Peux-tu trouver [gâteau](recette) ?
+          - Peux-tu trouver [Ratatouille](recette) ?
+          - Pouvez-vous trouver [Chili à la viande] (recette) svp?
+          - Pourriez-vous trouver comment cuisiner [Soupe au poulet et au riz] (recette) ?
+          - Puis-je avoir une [Lasagne](recette) s'il vous plait ?
+          - Pouvez-vous me donner un [cheesecake](recette) ?
+          - Pourriez-vous me donner une [Lasagne](recette) s'il vous plaît ?
+          - Je veux faire un [Chili à la viande](recette)
+          - Je veux faire un [cocktail](recette) !
+          - puis-je avoir un [poulet](recette) s'il vous plait ?
+          - puis-je avoir un [poulet](recette) svp
+          - pourrais-je avoir un [Chili à la viande](recette) ?
+          - je veux cuisiner un [oignon](recette) !
+          - je veux faire un [poulet](recette)
+          - je veux faire une [saucisse](recette) !
+          - Pourrais-je avoir une [citrouille](recette) ?
+          - Pourriez-vous trouver comment cuisiner [Tarte](recette) ?
+          - Pourriez-vous me donner une [Lasagne](recette) ?
+          - Je veux faire une [Tarte](recette) !
+          - pourrais-je avoir une [Confiture](recette) s'il vous plait ?
+          - pourriez-vous trouver comment cuisiner le [cacao](recette) ?
+          - je veux faire un [chili](recette).
+          - Peux-tu trouver [gâteau](recette) ?
           - Je veux cuisiner une [Ratatouille](recipe) ?
           - est ce que je peux avoir la recette [Chili](recipe) ?
           - peux-tu me trouver comment cuisiner du [Poulet](recipe)?
@@ -147,31 +101,23 @@ nlu:
           - je veux cuisiner des [tomates](recipe) s'il te plait
           - des [salsifis](recipe)
           - [carotte](recipe)
-          - How to cook a [Lasagna](recipe) ?
-          - how to cook a [Lasagna](recipe)
+          - Comment faire des [Lasagna](recipe) ?
+          - comment faire un [Lasagna](recipe) ?
+          - Comment faire une [Lasagna](recipe)
+          - Comment cuisiner un [Lasagna](recipe) ?
+          - comment cuisiner des [Lasagna](recipe)
+          - comment cuisiner une [Lasagna](recipe) ?
 
     - intent: repeat_recipe
       examples: |
-          - What is my recipe 
-          - Tell me my recipe
-          - Do you know my recipe
-          - Repeat my recipe
-          - qu'elle est ma recette ?
-          - qu'elle est la recette
+          - quelle est ma recette ?
+          - Quelle est la recette
           - dis moi ma recette
           - répète ma recette
+          - c'est quoi ma recette ?
 
     - intent: full_recipe
       examples: |
-          - Y
-          - Yes
-          - Yes please
-          - can i have the full recipe?
-          - Could i have the full recipe, please?
-          - Could i have the full recipe ?
-          - can I have the full recipe, please
-          - could I have the full recipe, please
-          - can I have the full recipe please?
           - oui
           - Oui
           - oui !
@@ -182,6 +128,7 @@ nlu:
           - est ce que je peux avoir la recette entière svp ?
           - est ce que je peux avoir la recette ?
           - la recette s'il te plait
+          - la complète
 
     - intent: select_recipe
       examples: |
@@ -199,7 +146,8 @@ nlu:
           - le [4](recipe_choice)
           - [28](recipe_choice) stp
           - je veux le [17](recipe_choice) stp
-          - j'veux [15]
-          - [14] stp
-          - [23] svp
+          - j'veux [15](recipe_choice)
+          - [14](recipe_choice) stp
+          - [23](recipe_choice) svp
+          - [5](recipe_choice)
 

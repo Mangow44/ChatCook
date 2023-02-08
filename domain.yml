@@ -16,16 +16,16 @@ intents:
 responses:
     utter_greet:
         - text: "Bonjour"
-        - text: "Comment vas-tu ?"
+        - text: "Comment allez-vous ?"
         - text: "Salut ! Quoi de neuf ? :)"
-        - text: "Salut ! Comment vas-tu ?"
+        - text: "Salut ! Comment allez-vous ?"
 
     utter_did_that_help:
-        - text: "Est-ce que ça t'a aidé?"
+        - text: "Est-ce que ça vous as aidé?"
         - text: "Ai-je réussi à résoudre certains de vos problèmes ?"
 
     utter_happy:
-        - text: "Super, continue !"
+        - text: "Super, continuez !"
         - text: "Je suis content de l'entendre !"
 
     utter_goodbye:
