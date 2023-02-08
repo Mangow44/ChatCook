@@ -57,7 +57,8 @@ class ActionResearchRecipe(Action):
         if recipe_list:
             reply = "Which recipe do you want to cook ?"
             for i, item in enumerate(recipe_list):
-                reply += f"\n{i + 1} - {item}"
+                if i<30:
+                    reply += f"\n{i + 1} - {item}"
             dispatcher.utter_message(text=reply)
         else:
             dispatcher.utter_message(text=f"I could not find recipes matching with {recipe}")
