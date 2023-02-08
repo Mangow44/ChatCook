@@ -68,29 +68,29 @@ nlu:
 
     - intent: search_recipe
       examples: |
-          - Peux-tu trouver [gâteau](recette) ?
-          - Peux-tu trouver [Ratatouille](recette) ?
-          - Pouvez-vous trouver [Chili à la viande] (recette) svp?
-          - Pourriez-vous trouver comment cuisiner [Soupe au poulet et au riz] (recette) ?
-          - Puis-je avoir une [Lasagne](recette) s'il vous plait ?
-          - Pouvez-vous me donner un [cheesecake](recette) ?
-          - Pourriez-vous me donner une [Lasagne](recette) s'il vous plaît ?
-          - Je veux faire un [Chili à la viande](recette)
-          - Je veux faire un [cocktail](recette) !
-          - puis-je avoir un [poulet](recette) s'il vous plait ?
-          - puis-je avoir un [poulet](recette) svp
-          - pourrais-je avoir un [Chili à la viande](recette) ?
-          - je veux cuisiner un [oignon](recette) !
-          - je veux faire un [poulet](recette)
-          - je veux faire une [saucisse](recette) !
-          - Pourrais-je avoir une [citrouille](recette) ?
-          - Pourriez-vous trouver comment cuisiner [Tarte](recette) ?
-          - Pourriez-vous me donner une [Lasagne](recette) ?
-          - Je veux faire une [Tarte](recette) !
-          - pourrais-je avoir une [Confiture](recette) s'il vous plait ?
-          - pourriez-vous trouver comment cuisiner le [cacao](recette) ?
-          - je veux faire un [chili](recette).
-          - Peux-tu trouver [gâteau](recette) ?
+          - Peux-tu trouver [gâteau](recipe) ?
+          - Peux-tu trouver [Ratatouille](recipe) ?
+          - Pouvez-vous trouver [Chili à la viande] (recipe) svp?
+          - Pourriez-vous trouver comment cuisiner [Soupe au poulet et au riz] (recipe) ?
+          - Puis-je avoir une [Lasagne](recipe) s'il vous plait ?
+          - Pouvez-vous me donner un [cheesecake](recipe) ?
+          - Pourriez-vous me donner une [Lasagne](recipe) s'il vous plaît ?
+          - Je veux faire un [Chili à la viande](recipe)
+          - Je veux faire un [cocktail](recipe) !
+          - puis-je avoir un [poulet](recipe) s'il vous plait ?
+          - puis-je avoir un [poulet](recipe) svp
+          - pourrais-je avoir un [Chili à la viande](recipe) ?
+          - je veux cuisiner un [oignon](recipe) !
+          - je veux faire un [poulet](recipe)
+          - je veux faire une [saucisse](recipe) !
+          - Pourrais-je avoir une [citrouille](recipe) ?
+          - Pourriez-vous trouver comment cuisiner [Tarte](recipe) ?
+          - Pourriez-vous me donner une [Lasagne](recipe) ?
+          - Je veux faire une [Tarte](recipe) !
+          - pourrais-je avoir une [Confiture](recipe) s'il vous plait ?
+          - pourriez-vous trouver comment cuisiner le [cacao](recipe) ?
+          - je veux faire un [chili](recipe).
+          - Peux-tu trouver [gâteau](recipe) ?
           - Je veux cuisiner une [Ratatouille](recipe) ?
           - est ce que je peux avoir la recette [Chili](recipe) ?
           - peux-tu me trouver comment cuisiner du [Poulet](recipe)?
