@@ -43,6 +43,8 @@ function sendMessage(msg) {
                     dialog.appendChild(botBox);
                 }
             });
+
+            dialog.scrollTop = dialog.scrollHeight;
         })
         .catch((error) => {
             botBox.children[1].style.color = "red";
