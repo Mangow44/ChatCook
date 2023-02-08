@@ -147,6 +147,8 @@ nlu:
           - je veux cuisiner des [tomates](recipe) s'il te plait
           - des [salsifis](recipe)
           - [carotte](recipe)
+          - How to cook a [Lasagna](recipe) ?
+          - how to cook a [Lasagna](recipe)
 
     - intent: repeat_recipe
       examples: |

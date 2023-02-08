@@ -1,4 +1,4 @@
 /venv
-models/
-.rasa/*
-actions/__pycache__/*
+/models/
+/.rasa/
+/actions/__pycache__/*
