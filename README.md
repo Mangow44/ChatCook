@@ -40,6 +40,12 @@ Installer Rasa :
 pip3 install rasa
 ```
 
+Installer Googletrans :
+
+```
+pip install googletrans==4.0.0-rc1
+```
+
 ### Commandes <a name="commandes"></a>
 
 Liste des commandes shell à utiliser pour faire fonctionner Rasa :
