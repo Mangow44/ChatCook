@@ -76,20 +76,20 @@ rasa shell
 ### Lancer la page web <a name="web"></a>
 
 ```
-rasa run --enable-api --cors "\*"
+rasa run --enable-api --cors "*"
 ```
 
 ## Utilisation <a name="utilisation"></a>
 
 ### Salutation <a name="salut"></a>
 
-La communication la plus simple reste de dire bonjour, un simple "**hello**" vous donnera une réponse instantannée du bot.
+La communication la plus simple reste de dire bonjour, un simple "**Bonjour**" vous donnera une réponse instantannée du bot.
 
 ### Demande de recette <a name="recette"></a>
 
 Pour obtenir une recette il suffit de demander au bot un type de recette, par exemple :
 
-- I want to cook ratatouille
-- I want to do lasagna
+- Je veux cuisine une ratatouille
+- Comment cuisiner des lasagnes
 
-Le bot va ensuite vous proposer diverse recette, vous pourrez la sélectionnant en entrant le numéro de la recette. Il va donc vous donner la liste d'ingrédients. Pour obtenir les étapes complètes de la recette, il faudra répondre à sa question "Do you want the full recipe?".
+Le bot va ensuite vous proposer diverse recette, vous pourrez la sélectionnant en entrant le numéro de la recette. Il va donc vous donner la liste d'ingrédients. Pour obtenir les étapes complètes de la recette, il faudra répondre à sa question "Voulez-vous voir la recette complète?".
