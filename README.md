@@ -12,9 +12,9 @@ Thomas Clouet - Chama El Majeny - Julie James - Gabriel Jolly
     - [Salutation](#salut)
     - [Demande de recette](#recette)
 
-## Installation et lancement <a href="install"></a>
+## Installation et lancement <a name="install"></a>
 
-### Prérequis <a href="prerequis"></a>
+### Prérequis <a name="prerequis"></a>
 
 Avoir un venv python3 avec Rasa d'installé :
 
@@ -40,14 +40,14 @@ Installer Rasa :
 pip3 install rasa
 ```
 
-### Commandes <a href="commandes"></a>
+### Commandes <a name="commandes"></a>
 
 Liste des commandes shell à utiliser pour faire fonctionner Rasa :
 
 -   https://rasa.com/docs/rasa/command-line-interface
 -   https://rasa.com/docs/rasa/domain/
 
-### Lancer une discussion <a href="serv"></a>
+### Lancer une discussion <a name="serv"></a>
 
 Si le modèle a changé, lancer l'apprentissage :
 
@@ -67,19 +67,19 @@ Enfin executer le shell Rasa dans un autre terminal que le server pour commencer
 rasa shell
 ```
 
-### Lancer la page web <a href="web"></a>
+### Lancer la page web <a name="web"></a>
 
 ```
 rasa run --enable-api --cors "\*"
 ```
 
-## Utilisation <a href="utilisation"></a>
+## Utilisation <a name="utilisation"></a>
 
-### Salutation <a href="salut"></a>
+### Salutation <a name="salut"></a>
 
 La communication la plus simple reste de dire bonjour, un simple "**hello**" vous donnera une réponse instantannée du bot.
 
-### Demande de recette <a href="recette"></a>
+### Demande de recette <a name="recette"></a>
 
 Pour obtenir une recette il suffit de demander au bot un type de recette, par exemple :
 
