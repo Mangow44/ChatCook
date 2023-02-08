@@ -15,10 +15,10 @@ intents:
 
 responses:
     utter_greet:
-        - text: "Bonjour"
-        - text: "Comment allez-vous ?"
-        - text: "Salut ! Quoi de neuf ? :)"
-        - text: "Salut ! Comment allez-vous ?"
+        - text: "Bonjour, commment puis-je vous aider ? "
+        - text: "Bonjour, que veux tu cuisinier ?"
+        - text: "Salut ! Que veux tu cuisinier ? :)"
+        - text: "Salut ! T'as faim ?"
 
     utter_did_that_help:
         - text: "Est-ce que ça vous as aidé?"
