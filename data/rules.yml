@@ -2,6 +2,11 @@ version: "3.1"
 
 rules:
 
+    - rule: Greet anytime the user says hello
+      steps:
+          - intent: greet
+          - action: utter_greet
+
     - rule: Say goodbye anytime the user says goodbye
       steps:
           - intent: goodbye
@@ -11,3 +16,13 @@ rules:
       steps:
           - intent: bot_challenge
           - action: utter_iamabot
+
+    - rule: Say user's recipe anytime the user asks
+      steps:
+          - intent: repeat_recipe
+          - action: action_say_recipe
+
+    - rule: Say 'feur' anytome the user says 'quoi'
+      steps:
+          - intent: quoi
+          - action: action_feur

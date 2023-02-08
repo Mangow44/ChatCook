@@ -3,8 +3,6 @@ version: "3.1"
 intents:
     - greet
     - goodbye
-    - affirm
-    - deny
     - mood_great
     - mood_unhappy
     - bot_challenge
@@ -54,11 +52,6 @@ actions:
     - action_research_recipe
     - action_select_recipe
     - action_display_ingredients
-    - utter_greet
-    - utter_cheer_up
-    - utter_did_that_help
-    - utter_goodbye
-    - utter_happy
 
 entities:
     - recipe
