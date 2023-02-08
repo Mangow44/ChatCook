@@ -9,8 +9,10 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
+from googletrans import Translator
 
-recipe_list=[]
+recipe_list = []
+translator = Translator()
 
 class ActionFeur(Action):
     def name(self) -> Text:
@@ -35,9 +37,9 @@ class ActionSayRecipe(Action):
         recipe = tracker.get_slot("recipe")
 
         if not recipe:
-            dispatcher.utter_message(text="I don't know your recipe")
+            dispatcher.utter_message(text="Je ne connais pas encore votre recette")
         else:
-            dispatcher.utter_message(text=f"Your recipe is {recipe}")
+            dispatcher.utter_message(text=f"Votre recette est {recipe}")
         return []
 
 class ActionResearchRecipe(Action):
@@ -49,6 +51,7 @@ class ActionResearchRecipe(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         recipe = tracker.get_slot('recipe')
+        recipe = translator.translate(recipe, dest='en').text
 
         reader = pd.read_csv('./csv/recipes.csv')
         reader = reader[reader['Title'].str.contains(recipe, regex=False, na=False, case=False)]
@@ -58,9 +61,9 @@ class ActionResearchRecipe(Action):
             reply = "Which recipe do you want to cook ?"
             for i, item in enumerate(recipe_list):
                 reply += f"\n{i + 1} - {item}"
-            dispatcher.utter_message(text=reply)
+            dispatcher.utter_message(text=translator.translate(reply, dest='fr').text)
         else:
-            dispatcher.utter_message(text=f"I could not find recipes matching with {recipe}")
+            dispatcher.utter_message(text=f"Je n'ai pas trouvé de recettes correspondant à {recipe}")
 
         return [SlotSet("recipe_list", recipe_list)]
 
@@ -86,9 +89,9 @@ class ActionSelectRecipe(Action):
 
             reply += f"{recipe['Instructions'].values[0]}"
 
-            dispatcher.utter_message(reply)
+            dispatcher.utter_message(text=translator.translate(reply, dest='fr').text)
         else:
-            dispatcher.utter_message(f"I could not find recipes matching with {recipe['Title']}")
+            dispatcher.utter_message(text=f"Je n'ai pas trouvé de recettes correspondant à {recipe['Title']}")
 
         return []
 
@@ -122,8 +125,8 @@ class ActionDisplayIngredients(Action):
 
             reply += "\nDo you want to see the full recipe ?"
 
-            dispatcher.utter_message(reply)
+            dispatcher.utter_message(text=translator.translate(reply, dest='fr').text)
         else:
-            dispatcher.utter_message(f"I could not find recipes matching with {recipe['Title']}")
+            dispatcher.utter_message(text=f"Je n'ai pas trouvé de recettes correspondant à {recipe['Title']}")
 
         return []
