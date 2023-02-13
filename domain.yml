@@ -12,6 +12,7 @@ intents:
     - ask_recipe
     - select_recipe
     - full_recipe
+    - no_recipe
 
 responses:
     utter_greet:
@@ -31,7 +32,7 @@ responses:
     utter_goodbye:
         - text: "Bye"
         - text: "Au revoir"
-        - text: "Je t'aime ! Bye"
+        - text: "Bisous ! Bye"
 
     utter_iamabot:
         - text: "Je suis un bot qui utilise Rasa."
@@ -41,6 +42,9 @@ responses:
 
     utter_remember:
         - text: "Merci, je m'en souviendrai."
+
+    utter_no_problem:
+        - text: "Pas de soucis ! Dis moi si tu as besoin de quelque chose d'autre !"
 
 actions:
     - action_feur

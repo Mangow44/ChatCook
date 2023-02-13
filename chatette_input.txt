@@ -31,14 +31,24 @@
     sup
     hey there
     hello there
+
 ~[recipe]
     tomato
+    Ratatouille
+    Lasagna
+    Tarte
+    chili
+    chicken
+    sausage
+
+~[recette]
+    tomate
     Ratatouille
     Lasagna
     Confiture
     Tarte
     chili
-    chicken
+    poulet
 
 ~[yes]
     yes

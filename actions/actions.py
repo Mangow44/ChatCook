@@ -94,7 +94,7 @@ class ActionSelectRecipe(Action):
 
             dispatcher.utter_message(text=translator.translate(reply, dest='fr').text)
         else:
-            dispatcher.utter_message(text=f"Je n'ai pas trouvé de recettes correspondant à {recipe['Title']}")
+            dispatcher.utter_message(text=f"Je n'ai pas trouvé de recettes correspondant à {translator.translate(recipe_name, dest='fr').text}")
 
         return []
 
@@ -130,6 +130,7 @@ class ActionDisplayIngredients(Action):
 
             dispatcher.utter_message(text=translator.translate(reply, dest='fr').text)
         else:
-            dispatcher.utter_message(text=f"Je n'ai pas trouvé de recettes correspondant à {recipe['Title']}")
+
+            dispatcher.utter_message(text=f"Je n'ai pas trouvé de recettes correspondant à {translator.translate(recipe_name, dest='fr').text}")
 
         return []

@@ -1,6 +1,10 @@
 version: "3.1"
 
 stories:
+    - story: greet
+      steps:
+          - intent: greet
+          - action: utter_greet
 
     - story: helping to cook
       steps:
@@ -18,3 +22,9 @@ stories:
         - action: action_display_ingredients
         - intent: full_recipe
         - action: action_select_recipe
+
+    - story : pas de recette complète
+      steps:
+        - intent: no_recipe
+        - action: utter_no_problem
+

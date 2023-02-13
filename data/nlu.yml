@@ -152,3 +152,11 @@ nlu:
           - [23](recipe_choice) svp
           - [5](recipe_choice)
 
+    - intent: no_recipe
+      examples: |
+          - non
+          - Non
+          - non merci
+          - :(
+          - Nope
+
